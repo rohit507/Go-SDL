@@ -5,17 +5,27 @@ package sdl
 import "C"
 
 const (
-	// init flags
+	
+	/** SDL_INIT Flags
+     *  These are the flags which may be passed to SDL_Init() -- you should
+     *  specify the subsystems which you will be using in your application.
+     */
 
 	INIT_AUDIO       = C.SDL_INIT_AUDIO
 	INIT_VIDEO       = C.SDL_INIT_VIDEO
 	INIT_CDROM       = C.SDL_INIT_CDROM
 	INIT_TIMER       = C.SDL_INIT_TIMER
 	INIT_JOYSTICK    = C.SDL_INIT_JOYSTICK
-	INIT_NOPARACHUTE = C.SDL_INIT_NOPARACHUTE
-	INIT_EVENTTHREAD = C.SDL_INIT_EVENTTHREAD
+	INIT_NOPARACHUTE = C.SDL_INIT_NOPARACHUTE	/**< Don't catch fatal signals */
+	INIT_EVENTTHREAD = C.SDL_INIT_EVENTTHREAD	/**< Not supported on all OS's */
 	INIT_EVERYTHING  = C.SDL_INIT_EVERYTHING
 
+	/** The available application states */
+   
+	APPMOUSEFOCUS = C.SDL_APPMOUSEFOCUS	/**< The app has mouse coverage */
+    APPINPUTFOCUS = SDL_APPINPUTFOCUS	/**< The app has input focus */
+    APPACTIVE 	  = SDL_APPACTIVE		/**< The application is active */
+	
 	// setvideo flags
 
 	SWSURFACE    = C.SDL_SWSURFACE
@@ -93,6 +103,42 @@ const (
 	USEREVENT = C.SDL_USEREVENT
 
 	NUMEVENTS = C.SDL_NUMEVENTS
+
+	// mouse button state variables
+
+	RELEASED = C.SDL_RELEASED
+	PRESSED = C.SDL_PRESSED
+
+	/** Button State Masks
+	 *  Used as a mask when testing buttons in buttonstate
+   	 *  Button 1:	Left mouse button
+   	 *  Button 2:	Middle mouse button
+     *  Button 3:	Right mouse button
+     *  Button 4:	Mouse wheel up	 (may also be a real button)
+     *  Button 5:	Mouse wheel down (may also be a real button)
+     */
+
+	//func BUTTONMASK(x int) uint8 { return 1 << ((x) - 1) }
+
+		/* mouse button constants */
+		
+   	MB_LEFT 	 = C.SDL_BUTTON_LEFT		
+   	MB_MIDDLE 	 = C.SDL_BUTTON_MIDDLE	
+   	MB_RIGHT 	 = C.SDL_BUTTON_RIGHT	
+   	MB_WHEELUP 	 = C.SDL_BUTTON_WHEELUP	
+   	MB_WHEELDOWN = C.SDL_BUTTON_WHEELDOWN	
+   	MB_X1 		 = C.SDL_BUTTON_X1		
+    MB_X2		 = C.SDL_BUTTON_X2		
+
+		/* mouse button mask constants */
+
+	MBMASK_LEFT	     uint8 = 1 << (MB_LEFT - 1)
+   	MBMASK_MIDDLE    uint8 = 1 << (MB_MIDDLE - 1)
+    MBMASK_RIGHT     uint8 = 1 << (MB_RIGHT - 1)
+	MBMASK_WHEELUP   uint8 = 1 << (MB_WHEELUP - 1)
+	MBMASK_WHEELDOWN uint8 = 1 << (MB_WHEELDOWN - 1)
+   	MBMASK_X1        uint8 = 1 << (MB_X1 - 1)
+   	MBMASK_X2        uint8 = 1 << (MB_X2 - 1)
 
 	// event masks
 
