@@ -94,6 +94,11 @@ const (
 
 	NUMEVENTS = C.SDL_NUMEVENTS
 
+	// mouse button state variables
+
+	RELEASED = C.SDL_RELEASED
+	PRESSED = C.SDL_PRESSED
+
 	// event masks
 
 	ACTIVEEVENTMASK     = C.SDL_ACTIVEEVENTMASK
