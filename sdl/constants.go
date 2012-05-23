@@ -23,8 +23,8 @@ const (
 	/** The available application states */
    
 	APPMOUSEFOCUS = C.SDL_APPMOUSEFOCUS	/**< The app has mouse coverage */
-    APPINPUTFOCUS = SDL_APPINPUTFOCUS	/**< The app has input focus */
-    APPACTIVE 	  = SDL_APPACTIVE		/**< The application is active */
+    APPINPUTFOCUS = C.SDL_APPINPUTFOCUS	/**< The app has input focus */
+    APPACTIVE 	  = C.SDL_APPACTIVE		/**< The application is active */
 	
 	// setvideo flags
 
