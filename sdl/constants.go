@@ -109,6 +109,37 @@ const (
 	RELEASED = C.SDL_RELEASED
 	PRESSED = C.SDL_PRESSED
 
+	/** Button State Masks
+	 *  Used as a mask when testing buttons in buttonstate
+   	 *  Button 1:	Left mouse button
+   	 *  Button 2:	Middle mouse button
+     *  Button 3:	Right mouse button
+     *  Button 4:	Mouse wheel up	 (may also be a real button)
+     *  Button 5:	Mouse wheel down (may also be a real button)
+     */
+
+	//func BUTTONMASK(x int) uint8 { return 1 << ((x) - 1) }
+
+		/* mouse button constants */
+		
+   	MB_LEFT 	 = C.SDL_BUTTON_LEFT		
+   	MB_MIDDLE 	 = C.SDL_BUTTON_MIDDLE	
+   	MB_RIGHT 	 = C.SDL_BUTTON_RIGHT	
+   	MB_WHEELUP 	 = C.SDL_BUTTON_WHEELUP	
+   	MB_WHEELDOWN = C.SDL_BUTTON_WHEELDOWN	
+   	MB_X1 		 = C.SDL_BUTTON_X1		
+    MB_X2		 = C.SDL_BUTTON_X2		
+
+		/* mouse button mask constants */
+
+	MBMASK_LEFT	     uint8 = 1 << (MB_LEFT - 1)
+   	MBMASK_MIDDLE    uint8 = 1 << (MB_MIDDLE - 1)
+    MBMASK_RIGHT     uint8 = 1 << (MB_RIGHT - 1)
+	MBMASK_WHEELUP   uint8 = 1 << (MB_WHEELUP - 1)
+	MBMASK_WHEELDOWN uint8 = 1 << (MB_WHEELDOWN - 1)
+   	MBMASK_X1        uint8 = 1 << (MB_X1 - 1)
+   	MBMASK_X2        uint8 = 1 << (MB_X2 - 1)
+
 	// event masks
 
 	ACTIVEEVENTMASK     = C.SDL_ACTIVEEVENTMASK
