@@ -5,17 +5,27 @@ package sdl
 import "C"
 
 const (
-	// init flags
+	
+	/** SDL_INIT Flags
+     *  These are the flags which may be passed to SDL_Init() -- you should
+     *  specify the subsystems which you will be using in your application.
+     */
 
 	INIT_AUDIO       = C.SDL_INIT_AUDIO
 	INIT_VIDEO       = C.SDL_INIT_VIDEO
 	INIT_CDROM       = C.SDL_INIT_CDROM
 	INIT_TIMER       = C.SDL_INIT_TIMER
 	INIT_JOYSTICK    = C.SDL_INIT_JOYSTICK
-	INIT_NOPARACHUTE = C.SDL_INIT_NOPARACHUTE
-	INIT_EVENTTHREAD = C.SDL_INIT_EVENTTHREAD
+	INIT_NOPARACHUTE = C.SDL_INIT_NOPARACHUTE	/**< Don't catch fatal signals */
+	INIT_EVENTTHREAD = C.SDL_INIT_EVENTTHREAD	/**< Not supported on all OS's */
 	INIT_EVERYTHING  = C.SDL_INIT_EVERYTHING
 
+	/** The available application states */
+   
+	APPMOUSEFOCUS = C.SDL_APPMOUSEFOCUS	/**< The app has mouse coverage */
+    APPINPUTFOCUS = SDL_APPINPUTFOCUS	/**< The app has input focus */
+    APPACTIVE 	  = SDL_APPACTIVE		/**< The application is active */
+	
 	// setvideo flags
 
 	SWSURFACE    = C.SDL_SWSURFACE
